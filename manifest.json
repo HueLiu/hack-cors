@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json.schemastore.org/chrome-manifest.json",
+  "homepage_url": "https://webextension.org/listing/access-control.html",
+  "manifest_version": 3,
+  "version": "0.0.1",
+  "name": "hack-cors",
+  "description": "An extension to unblock CORS.",
+  "author": "HueLiu",
+  "icons": {
+    "48": "logo.png"
+  },
+  "permissions": [
+    "contextMenus",
+    "debugger",
+    "declarativeNetRequest",
+    "storage",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "chromium:service_worker": "service_worker.ts",
+    "firefox:scripts": [
+      "service_worker.ts"
+    ]
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "x-frame",
+        "enabled": false,
+        "path": "rulesets/x-frame.json"
+      },
+      {
+        "id": "overwrite-origin",
+        "enabled": false,
+        "path": "rulesets/overwrite-origin.json"
+      },
+      {
+        "id": "allow-credentials",
+        "enabled": false,
+        "path": "rulesets/allow-credentials.json"
+      },
+      {
+        "id": "allow-headers",
+        "enabled": false,
+        "path": "rulesets/allow-headers.json"
+      },
+      {
+        "id": "referer",
+        "enabled": false,
+        "path": "rulesets/referer.json"
+      },
+      {
+        "id": "csp",
+        "enabled": false,
+        "path": "rulesets/csp.json"
+      },
+      {
+        "id": "allow-shared-array-buffer",
+        "enabled": false,
+        "path": "rulesets/allow-shared-array-buffer.json"
+      }
+    ]
+  },
+  "action": {}
+}

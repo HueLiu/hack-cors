@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "name": "hack-cors",
+  "description": "An extension to unblock CORS.",
+  "version": "0.0.1",
+  "author": "HueLiu",
+  "devDependencies": {
+    "eslint": "^9.22.0",
+    "extension": "^2.0.0-beta.9",
+    "typescript": "^5.7.3"
+  },
+  "scripts": {
+    "dev": "extension dev",
+    "dev all": "extension dev --browser=all --polyfill",
+    "start": "extension start",
+    "start all": "extension start --browser=all --polyfill",
+    "build": "extension build",
+    "build all": "extension build --browser=all --polyfill"
+  },
+  "dependencies": {}
+}
